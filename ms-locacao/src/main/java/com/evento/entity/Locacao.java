@@ -18,7 +18,7 @@ public class Locacao {
 	private Date data;
 	private Time hora;
 	private int duracao;
-	private int local;
+	private Long local;
 
 	public Long getId() {
 		return id;
@@ -52,15 +52,15 @@ public class Locacao {
 		this.duracao = duracao;
 	}
 
-	public int getLocal() {
+	public Long getLocal() {
 		return local;
 	}
 
-	public void setLocal(int local) {
+	public void setLocal(Long local) {
 		this.local = local;
 	}
 
-	public Locacao(Long id, Date data, Time hora, int duracao, int local) {
+	public Locacao(Long id, Date data, Time hora, int duracao, Long local) {
 		this.id = id;
 		this.data = data;
 		this.hora = hora;

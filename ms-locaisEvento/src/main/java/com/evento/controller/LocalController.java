@@ -14,18 +14,18 @@ import com.evento.entity.Local;
 import com.evento.service.LocalService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/local")
 public class LocalController {
 	@Autowired
 	LocalService service;
 
-	@GetMapping("/local")
+	@GetMapping
 	public ResponseEntity<List<Local>> getAll() {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getAll());
 	}
 
-	@GetMapping("/local/{idlocal}/reserva/{acao}")
-	public ResponseEntity<Local> reservar(@PathVariable("idlocal") Long idlocal, @PathVariable("acao") boolean acao) {
+	@GetMapping("/{idlocal}/reserva/{acao}")
+	public ResponseEntity<String> reservar(@PathVariable("idlocal") Long idlocal, @PathVariable("acao") boolean acao) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.reservar(idlocal, acao));
 	}
 }

@@ -26,10 +26,15 @@ public class LocalService {
 	   return local;
    }
    
-   public Local reservar(Long id, boolean acao) {
+   public String reservar(Long id, boolean acao) {
 	   Local local = this.getOne(id);
 	   local.setOcupado(acao);
 	   repository.save(local);
-	   return local;	   
+	   
+	   String msg = "Reserva realizada com sucesso";
+	   if(!acao)
+		   msg = "Cancelamento da reserva realizada com sucesso";
+	   
+	   return msg;	   
    }
 }

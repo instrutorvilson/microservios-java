@@ -61,11 +61,15 @@ public class Locacao {
 	}
 
 	public Locacao(Long id, Date data, Time hora, int duracao, int local) {
-		super();
 		this.id = id;
 		this.data = data;
 		this.hora = hora;
 		this.duracao = duracao;
 		this.local = local;
 	}
+
+	public Locacao() {
+	}
+	
+	
 }

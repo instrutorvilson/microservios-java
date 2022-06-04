@@ -24,6 +24,10 @@ public class LocacaoService {
 	   Optional<Locacao> opt = repository.findById(id);
 	   Locacao local = opt.orElseThrow(() ->new EntityNotFoundException("Local não existe"));
 	   return local;
-   }   
+   }
+   
+  public Locacao save(Locacao locacao) {
+	  return repository.save(locacao);
+  }
    
 }
